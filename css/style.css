@@ -613,11 +613,11 @@ ul {
     opacity: .5; }
 
 .book {
-  background-image: linear-gradient(110deg, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(../../img/img4.jpg);
+  background-image: linear-gradient(110deg, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(../img/img3.jpg);
   background-size: cover; }
   @media (max-width: 62.5em) {
     .book {
-      background-image: linear-gradient(110deg, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 50%), url(../../img/img4.jpg); } }
+      background-image: linear-gradient(110deg, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 50%), url(../img/img3.jpg); } }
   .book__form {
     width: 50%; }
     @media (max-width: 62.5em) {
