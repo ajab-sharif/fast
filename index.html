@@ -34,7 +34,11 @@
 
     <header class="header">
         <div class="header__logo-box">
-            <img src="img/img3.jpg" alt="logo" class="header__logo">
+            <picture class="header__logo">
+                <source srcset=" img/img4.jpg 1x, img/img7 2x" 
+                media="(max-width:33.75em)">
+                <img srcset="img/img3.jpg 1x, img/hero.png 2x" alt="logo" class="header__logo">
+            </picture>
         </div>
         <div class="u-center-box">
             <h1 class="headding-primary">
@@ -78,7 +82,7 @@
                 </div>
                 <div class="col-1-of-2">
                     <div class="composition">
-                        <img src="img/img4.jpg" alt="composition__photo-1"
+                        <img srcset="  img/hero.png 1x, img/img4.jpg 2x " alt="composition__photo-1"
                             class="composition__photo composition__photo-1">
                         <img src="img/img4.jpg" alt="composition__photo-2"
                             class="composition__photo composition__photo-2">
