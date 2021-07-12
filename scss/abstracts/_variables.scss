@@ -1,0 +1,40 @@
+    // color 
+    $blue: #0d6efd;
+    $purple: #6f42c1;
+    $indigo: #6610f2;
+    $pink: #d63384;
+    $red: #dc3545;
+    $orange: #fd7e14;
+    $yellow: #ffc107;
+    $green: #198754;
+    $teal: rgb(32, 201, 151);
+    $cyan: #0dcaf0;
+    $white: rgb(255, 255, 255);
+    $gray:rgb(128, 128, 128);
+    $gray-light:rgb(238, 238, 238);
+    $gray-dark: rgb(70, 73, 70);
+    $primary: #0d6efd;
+    $secondary: #6c757d;
+    $success: rgb(0, 158, 34);
+    $success-light: rgb(0, 255, 76);
+    $info: #0dcaf0;
+    $warning: #ffc107;
+    $danger: #dc3545;
+    $light: #faf6f6;
+    $dark: rgba(0, 0, 0, 0.788);
+    $gradient: linear-gradient(180deg, rgba(133, 216, 231, 0.781), rgba(98, 225, 241, 0.808));
+
+// font
+    $font-size:1.6rem;
+    $font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    $font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    // clip
+    $clip: polygon(0 0, 100% 0%, 100% 75%, 0% 100%);
+    $clip-2: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+    $clip-1: polygon(0 20%, 100% 0, 100% 75%, 0 100%);
+
+    // grid 
+    $grid-width:114rem;
+    $gatter-horizontal:8rem;
+    $gatter-vartical:4rem;

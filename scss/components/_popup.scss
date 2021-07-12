@@ -1,0 +1,177 @@
+.popup {
+    height: 100%;
+    width: 100%;
+    background: rgba($gray, 0.7);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(.1);
+        opacity: 0;
+        width: 85%;
+        background: $white;
+        border-radius: 5px;
+        overflow: hidden;
+        display: table;
+        transition: all .4s .2s;
+
+    }
+
+    &__left {
+        width: 33.33333%;
+        display: table-cell;
+    }
+
+    &__img {
+        max-width: 100%;
+        height: 24rem;
+        display: block;
+        object-fit: cover;
+
+    }
+
+    &__right {
+        padding: 2rem 4rem;
+        display: table-cell;
+        width: 66.7777778%;
+        vertical-align: middle;
+
+    }
+
+    &__close:link,
+    &__close:visited {
+        color: $gray;
+        font-size: 4rem;
+        position: absolute;
+        top: 3rem;
+        right: 4rem;
+        line-height: 1;
+
+        &:hover {
+            color: $success-light;
+        }
+    }
+
+    &__text {
+        color: $gray;
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: solid 2px #777;
+    }
+
+
+    .btn--green {
+        background: $success;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        color: $white;
+
+        &::after {
+            background: $success;
+            color: $white;
+        }
+    }
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    // for responsive 
+    @include respond(tab-port) {
+        overflow: scroll !important;
+        &__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -32%) scale(.1);
+            opacity: 0;
+            width: 85%;
+            background: $white;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all .4s .2s;
+            padding: 4rem 0rem;
+            max-height: 60rem;
+
+        }
+
+        &__left {
+            display: block;
+            width: 100%;
+
+        }
+
+        &__img {
+            max-width: 40%;
+            height: 24rem;
+            display: inline-block;
+            object-fit: cover;
+            margin-top: 4rem;
+            border: 2px solid greenyellow;
+
+        }
+
+        &__right {
+            padding: 2rem 4rem;
+            display: block;
+            width: 100%;
+
+        }
+
+        &__close:link,
+        &__close:visited {
+            color: $gray;
+            font-size: 4rem;
+            position: absolute;
+            top: 3rem;
+            right: 4rem;
+            line-height: 1;
+
+            &:hover {
+                color: $success-light;
+            }
+        }
+
+        &__text {
+            color: $gray;
+            column-count: 1;
+        }
+
+
+        .btn--green {
+            background: $success;
+            padding: .5rem 1rem;
+            font-size: 1rem;
+            color: $white;
+
+            &::after {
+                background: $success;
+                color: $white;
+            }
+        }
+
+        &:target {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &:target &__content {
+            transform: translate(-50%, -32%) scale(1);
+            opacity: 1;
+        }
+
+    }
+}

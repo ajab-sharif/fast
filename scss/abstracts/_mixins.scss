@@ -1,0 +1,168 @@
+// clearfix 
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// btn //
+@mixin btn-basic-style {
+    font-size: $font-size;
+    display: inline-block;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+@mixin btn-small {
+    @include btn-basic-style;
+    border-bottom: 1px solid $success;
+    color: $success;
+    font-size: 1.3rem;
+    padding: .5rem .2rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    @include after;
+
+    &::after {
+        background: $success;
+        color: white;
+        transform: translateY(100%);
+        transition: all .3s;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: white;
+    }
+
+    &:hover::after {
+        transform: translateY(0);
+    }
+}
+
+// after before
+@mixin after {
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        position: absolute;
+    }
+
+}
+
+@mixin before {
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+
+}
+
+// font style
+@mixin header-small {
+    font-weight: 600;
+    color: darken($gray, 2%);
+    font-size: $font-size;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+
+    @include respond(sm-phone-port) {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+
+    }
+
+}
+
+@mixin para {
+    font-weight: 400;
+    margin-bottom: 2.2rem;
+    color: darken($gray, 0%);
+
+    // for responsive 
+    @include respond(sm-phone-port) {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+
+    }
+}
+
+@mixin center-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+// responsive management 
+/*
+0 - 320px  = phone(portrail) ;
+0 - 320px  = phone(portrail) ;
+0 - 320px  = phone(portrail) ;
+0 - 320px  = phone(portrail) ;
+0 - 320px  = phone(portrail) ;
+ 
+$breakpoint call manager ...............
+320 - sm-phone-port
+*/
+@mixin respond ($breakpoint) {
+
+    @if $breakpoint==laptop-mini {
+        @media only screen and (max-width:78.125em) {
+            // 1250px = 78.125em
+            @content;
+        }
+    }
+
+    // @if $breakpoint==tab-lands{
+    //     @media (max-width:78.125em){ // 1250px = 78.125em
+    //         @content;
+    //     }
+    // }
+    @if $breakpoint==tab-port {
+        @media only screen and (max-width:62.5em) {
+            //1000px = 62.5em ;
+            @content;
+        }
+    }
+
+    @if $breakpoint==phone-lands {
+        @media only screen and (max-width:33.75em) {
+            //540px = 33.75em ;
+            @content;
+        }
+    }
+
+    @if $breakpoint==phone-port {
+        @media only screen and (max-width:21.25em) {
+            //340px = 21.25em ;
+            @content;
+        }
+    }
+
+    // @if $breakpoint==sm-phone-land{
+    //     @media (max-width:21.25em) { //340px = 21.25em ;
+    //         @content;
+    //     }
+    // }
+    @if $breakpoint==big-dasktop {
+        @media only screen and (min-width:112.5em) {
+            // 1800px = 112.5em ;
+            @content;
+        }
+    }
+}

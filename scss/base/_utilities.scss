@@ -1,0 +1,44 @@
+.u-center-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.u-margin-bottom-small {
+    margin-bottom: 2rem !important;
+}
+
+.u-margin-bottom-small-px {
+    margin-bottom: 4px !important;
+}
+
+.u-margin-bottom-md {
+    margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-big {
+    margin-bottom: 10rem !important; // for responsive 
+    // for responsive 
+    @include respond(phone-port) {
+        margin-bottom: 4rem !important;
+    }
+
+}
+
+.u-margin-top-large {
+    margin-top: 15rem !important;
+}
+
+.u-text-center {
+    text-align: center;
+}
+
+.u-text-left {
+    text-align: left;
+}
+
+.u-margin-auto {
+    margin: 0 auto;
+}

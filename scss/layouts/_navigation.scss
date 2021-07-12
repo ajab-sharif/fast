@@ -1,0 +1,219 @@
+.navigation {
+    &__bg {
+        position: fixed;
+        top: 8rem;
+        right: 8rem;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-image: radial-gradient(#7ed56f, rgb(40, 180, 133));
+        z-index: 40;
+        transition: all .6s;
+
+        // for responsive 
+        @include respond(phone-lands) {
+            top: 3.2rem;
+            right: 3.2rem;
+            width: 3rem;
+            height: 3rem;
+        }
+        @include respond(phone-port) {
+            top: 3.2rem;
+            right: 3.2rem;
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        position: fixed;
+        top: 7.5rem;
+        right: 7.5rem;
+        width: 7rem;
+        height: 7rem;
+        background: $white;
+        z-index: 56;
+        border-radius: 50%;
+        text-align: center;
+        transition: all .3s;
+        cursor: pointer;
+        box-shadow: 0 1rem 3rem #0000001a;
+
+        // for responsive 
+        @include respond(phone-lands) {
+            top: 3rem;
+            right: 3rem;
+            width: 3.8rem;
+            height: 3.8rem;
+        }
+        @include respond(phone-port) {
+            top: 3rem;
+            right: 3rem;
+            width: 3.8rem;
+            height: 3.8rem;
+        }
+
+    }
+
+    &__nav {
+        z-index: 50;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 0%;
+        opacity: 0;
+        transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__item {
+        margin-bottom: .5rem;
+        text-align: center;
+
+    }
+
+    &__link {
+        text-transform: uppercase;
+        background-image: linear-gradient(135deg, transparent 50%, $white 50%);
+        font-size: 2.5rem;
+        padding: 1.5rem 5rem;
+        display: inline-block;
+        background-size: 240%;
+        transition: all .8s;
+        color: $white;
+
+        // for responsive 
+        @include respond(phone-lands) {
+            font-size: 2rem;
+        padding: 1.3rem 0px;
+        }
+        @include respond(phone-port) {
+            font-size: 1.7rem;
+            padding: 1rem 1.1rem;
+        }
+
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: $success-light;
+            transform: translateX(.9rem);
+        }
+
+        span {
+            margin-right: 2rem;
+
+            &:hover,
+            &:active {
+                font-size: 2.1rem;
+                background: $dark;
+                color: $white;
+                border-radius: 50%;
+                padding: .4rem;
+            }
+        }
+    }
+
+    &__checkbox:checked~&__bg {
+        transform: scale(80);
+        @include respond(phone-lands){
+        transform: scale(134);
+
+        }
+    }
+
+    &__checkbox:checked~&__nav {
+        width: 100%;
+        opacity: 1;
+    }
+
+    &__icon {
+        z-index: 444;
+        width: 3rem;
+        height: 3px;
+        background: $gray-dark;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        // for responsive 
+        @include respond(phone-lands) {
+            width: 2rem;
+            height: 2px;
+        }
+
+        &::after,
+        &::before {
+            display: block;
+            width: 3rem;
+            content: "";
+            height: 3px;
+            background: $gray-dark;
+            transition: all .3s;
+
+            // for responsive 
+            @include respond(phone-lands) {
+                width: 2rem;
+                height: 2px;
+            }
+
+        }
+
+        &::after {
+            position: absolute;
+            bottom: -.8rem;
+            left: 0%;
+
+            // for responsive 
+            @include respond(phone-lands) {
+                bottom: -.6rem !important;
+            }
+
+        }
+
+        &::before {
+            position: absolute;
+            top: -.8rem;
+            left: 0%;
+
+            // for responsive 
+            @include respond(phone-lands) {
+                top: -.8rem !important;
+            }
+        }
+    }
+
+    &__button:hover &__icon::after {
+        bottom: -1rem;
+    }
+
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__checkbox:checked+&__button &__icon {
+        background: transparent;
+    }
+
+    &__checkbox:checked+&__button &__icon::after {
+        bottom: 0!important ;
+        transform: rotate(135deg);
+
+    }
+
+    &__checkbox:checked+&__button &__icon::before {
+        top: 0!important;
+        transform: rotate(-135deg);
+    }
+}

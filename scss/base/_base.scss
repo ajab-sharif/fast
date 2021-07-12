@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // this is define what 1rem is 
+    font-size: 62.5%;
+
+    // for responsive
+    @include respond(laptop-mini) {
+        font-size: 50%;
+    }
+    @include respond(tab-port) {
+        font-size: 43.75%;
+    }
+
+    @include respond (phone-lands) {
+        font-size: 37.5%;
+    }
+    @include respond(phone-port) {
+        font-size: 31.25%;
+    }
+
+    @include respond(big-dasktop) {
+        font-size: 81.25%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 3rem;
+
+    // for responsive 
+
+    @include respond(phone-lands) {
+        padding: 0;
+    }
+
+    @include respond(phone-port) {
+        padding: 0;
+    }
+}
+
+a {
+    color: $success;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}

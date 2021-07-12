@@ -1,0 +1,207 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 50rem;
+
+    &__side {
+        height: 50rem;
+        transition: all .8s ease-in;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &-font {
+            background: $white;
+        }
+
+        &-back {
+            transform: rotateY(-180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $yellow, $orange);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $success-light, $success);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $yellow, $orange);
+            }
+        }
+    }
+
+    &:hover &__side-font {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side-back {
+        transform: rotateY(0deg);
+    }
+
+    &__picture {
+        background-blend-mode: screen;
+        height: 20rem;
+        background-size: 100% 100%;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+        position: relative;
+
+        &-1 {
+            background-image: linear-gradient(to right bottom, $yellow, $orange), url(../img/img7.jpg);
+        }
+
+        &-2 {
+            background-image: linear-gradient(to right, rgba(($success-light), 0.712), rgba(($success), 0.712)), url(../img/img1.jpg);
+        }
+
+        &-3 {
+            background-image: linear-gradient(to right bottom, $yellow, $orange), url(../img/img1.jpg);
+        }
+
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-align: right;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        color: $white;
+        width: 75%;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+
+        &-1 {
+            background-image: linear-gradient(to right bottom, $yellow, $orange);
+
+        }
+
+        &-2 {
+            background-image: linear-gradient(to right bottom, $success-light, $success);
+
+        }
+
+        &-3 {
+            background-image: linear-gradient(to right bottom, $yellow, $orange);
+
+        }
+    }
+
+    &__details {
+        ul {
+            @include para;
+            width: 80%;
+            margin: 0 auto;
+            list-style: none;
+            padding-top: 4rem;
+
+            li {
+                padding: 1rem;
+                text-align: center;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $gray-light;
+                }
+            }
+        }
+    }
+
+    &__cta {
+        @include center-div;
+        top: 48%;
+        color: $white;
+
+        &-btn {
+            background: $white;
+            color: $gray;
+            padding: 1rem 3.6rem !important;
+
+            &::after {
+                background: $white;
+            }
+        }
+
+    }
+
+    &__price {
+        &-only {
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        &-value {
+            font-size: 6rem;
+            padding: 1.6rem 0rem 5rem 0rem;
+            font-weight: 100 !important;
+
+        }
+
+    }
+
+    // for responsive
+    // @include respond(tab-port) {
+     @media only screen and (max-width:62.5em),
+     only screen and (hover:none){
+        perspective: 150rem;
+        -moz-perspective: 150rem;
+        position: relative;
+        height: auto;
+
+        &__side {
+            height: auto;
+            position: relative;
+
+            &-back {
+                transform: rotateY(0deg);
+                clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 100%);
+                margin-top: -5rem;
+            }
+        }
+
+        &:hover &__side-font {
+            transform: rotateY(0deg);
+        }
+
+        &__details {
+            ul {
+                @include para;
+                width: 80%;
+                margin: 0 auto;
+                list-style: none;
+                padding-top: 4rem;
+                padding: 3rem 0;
+
+                li {
+                    padding: 1rem;
+                    text-align: center;
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $gray-light;
+                    }
+                }
+            }
+        }
+
+        &__cta {
+
+            position: relative;
+            top: 16.7rem;
+            left: 50%;
+            padding: 5rem;
+        }
+
+    }
+
+
+}

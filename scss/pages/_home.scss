@@ -1,0 +1,46 @@
+.section-about {
+    background: $gray-light;
+    padding: 28vh 0px 20vh 0;
+    margin-top: -25vh;
+}
+
+.section-feature {
+    padding: 25rem 2rem;
+    background-image: linear-gradient(to right, rgba(($success-light), 0.712), rgba(($success), 0.712)), url(../img/animail.jpg);
+    color: $dark;
+    background-position: top;
+    background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    &>* {
+        transform: skewY(7deg);
+    }
+}
+
+.section-tours {
+    padding: 23vh 0rem 13rem 0rem;
+    background: $gray-light;
+    margin-top: -10rem;
+}
+
+.section-stories {
+    position: relative;
+    padding: 20vh;
+    // for responsive 
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+    @include respond(phone-lands) {
+        padding:10rem 0px !important;
+       }
+    @include respond(phone-port) {
+        padding: 8rem;
+    }
+}
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right, $success-light, $success);
+}

@@ -1,0 +1,121 @@
+.book {
+    background-image: linear-gradient(110deg, rgba($white, .8) 50%, transparent 50%), url(../img/img3.jpg);
+    background-size: cover;
+
+    // for responsive 
+    @include respond(tab-port) {
+        background-image: linear-gradient(110deg, rgba($white, .8) 50%, rgba($white, .8) 50%), url(../img/img3.jpg);
+
+    }
+
+    &__form {
+        width: 50%;
+
+        // for responsive 
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+}
+
+.form {
+    padding: 6rem;
+
+    &__group {
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__input {
+        display: block;
+        width: 90%;
+        padding: 1.5rem 2rem;
+        border: none;
+        color: $gray-dark;
+        font-size: $font-size;
+        font-family: inherit;
+        border-bottom: 3px solid transparent;
+
+        &::-webkit-input-placeholder {
+            color: $gray;
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: 3px solid $teal;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid $orange;
+        }
+    }
+
+    &__label {
+        margin-left: 2rem;
+        font-size: 1.3rem;
+        display: block;
+        color: $gray;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown+&__label {
+        transform: translateY(-4rem);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__radio-group {
+        font-size: $font-size;
+        width: 48%;
+        display: inline-block;
+        color: $gray;
+        position: relative;
+
+        // for responsive 
+        @include respond(tab-port) {
+            display: block;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3rem;
+        height: 3rem;
+        display: inline-block;
+        border: .5rem solid $success-light;
+        border-radius: 50%;
+
+        &::after {
+            content: "";
+            width: 1.3rem;
+            height: 1.3rem;
+            transition: opacity .2s;
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            background: $success;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+
+    &__radio-label {
+        padding-left: 4.5rem;
+        cursor: pointer;
+    }
+
+    &__radio-input:checked~&__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+}

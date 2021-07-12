@@ -1,0 +1,93 @@
+// header section button 
+.btn {
+
+    &,
+    &:link,
+    &:visited {
+        @include btn-basic-style;
+        padding: 1.2rem 4rem;
+        border-radius: 5rem;
+        position: relative;
+        text-transform: uppercase;
+        font-size: $font-size;
+        font-weight: 400;
+        // for form button  
+        border: none;
+
+        // for responsive  
+        @include respond(phone-port) {
+            padding: 1rem 3rem;
+            font-weight: 300;
+
+        }
+    }
+
+    &-white {
+        background: $white;
+        color: $dark;
+
+        &::after {
+            background: $white;
+        }
+    }
+
+    &-animate {
+        animation: moveup .8s ease-in .75s;
+    }
+
+    @include after;
+
+    &::after {
+        border-radius: 5rem;
+        z-index: -1;
+        opacity: 1;
+        transition: all ease .4s;
+    }
+
+    &:hover {
+        box-shadow: .4rem 1.2rem 1rem rgba(($dark), .5);
+        transform: translateY(-.3rem);
+
+
+        &::after {
+            transform: scaleX(1.7) scaleY(1.5);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-.2rem);
+        box-shadow: .2rem .7rem .6rem rgba(($dark), .5);
+    }
+}
+
+.btn-text {
+    @include btn-small;
+    font-weight: 400;
+    font-size: $font-size;
+}
+
+.btn-feature {
+    @include btn-small;
+    font-size: 1rem;
+    padding: .1rem .5rem;
+    font-weight: 400;
+    font-size: $font-size;
+
+
+}
+
+.btn-success {
+    color: $white;
+    background: linear-gradient(to right bottom, $success-light, $success-light);
+
+    &::after {
+        background: $success-light;
+    }
+}
+
+.btn-stories {
+    text-transform: uppercase;
+    padding: .3rem .5rem;
+    font-weight: 400;
+}

@@ -1,0 +1,31 @@
+.feature-box {
+  background: $gray-light;
+  transition: all .3s ease;
+  border-radius: .5rem;
+  padding: 2rem;
+  // for responsive 
+
+  @include respond(phone-port) {
+    padding: 5rem 2rem;
+
+  }
+
+  &__icon {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 7rem;
+    margin: 3rem;
+    color: $success;
+
+    // for responsive 
+    @include respond(phone-port) {
+      font-size: 3rem;
+
+    }
+
+  }
+
+  &:hover {
+    transform: translateY(-1rem) scale(1.03);
+  }
+}

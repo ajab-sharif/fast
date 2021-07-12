@@ -1,0 +1,65 @@
+.row {
+    max-width: $grid-width;
+    margin: 0 auto;
+    @include clearfix;
+
+    // for responsive 
+    @include respond(tab-port) {
+        max-width: 50rem;
+    }
+    @include respond(phone-lands) {
+        max-width: 95% !important;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: $gatter-vartical;
+    }
+
+    [class^=col-] {
+        float: left;
+        width: calc((100% - #{$gatter-horizontal}) / 2);
+
+        &:not(:last-child) {
+            margin-right: $gatter-horizontal;
+
+            // for responsive
+            @include respond(tab-port) {
+                margin-right: none !important;
+                margin-bottom: $gatter-vartical;
+            }
+        }
+
+        @include respond(tab-port) {
+            display: block;
+            width: 90% !important;
+            margin: auto !important;
+            margin-right: none !important;
+            float: none;
+            margin-bottom: 8rem !important;
+        }
+        @include respond(phone-lands) {
+            margin-bottom: 3rem !important;
+           }
+
+        @include respond(phone-port) {
+            display: block;
+            width: 90% !important;
+            margin: auto !important;
+            margin-right: none !important;
+            float: none;
+            margin-bottom: 8rem !important;
+        }
+    }
+
+    .col-1-of-2 {
+        width: calc((100% - #{$gatter-horizontal}) / 2);
+
+    }
+
+    .col-1-of-3 {
+        width: calc((100% - 2 * #{$gatter-horizontal}) / 3);
+    }
+    .col-1-of-4 {
+        width: calc((100% - 3 * #{$gatter-horizontal}) / 4);
+    }
+}

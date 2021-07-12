@@ -1,0 +1,114 @@
+.composition {
+    position: relative;
+
+    &__photo {
+        width: 50%;
+        position: absolute;
+        outline-offset: 2rem;
+        transition: all .2s ease;
+        z-index: 1;
+        box-shadow: 0rem 4rem 10rem $dark;
+
+        &-1 {
+            top: 0%;
+            left: 0%;
+        }
+
+
+        &-2 {
+            top: 6rem;
+            left: 47%;
+
+
+        }
+
+        &-3 {
+            top: 17rem;
+            left: 21%;
+        }
+
+   
+        @include respond(tab-port) {
+            width: 30%;
+            float: left;
+            position: relative;
+            transition: all .2s ease;
+            z-index: 1;
+            transform: scale(1.2);
+            box-shadow: 0rem 4rem 10rem $dark;
+
+            &-1 {
+                transform: scale(.9);
+                top: 2px;
+                left: 6%;
+            }
+
+
+            &-2 {
+                top: -2px;
+                left: 6%;
+                transform: scale(1.3);
+                z-index: 29;
+
+
+            }
+
+            &-3 {
+                transform: scale(.9);
+                top: 2px;
+                left: 6%;
+            }
+        }
+        @include respond(phone-port) {
+            width: 30%;
+            float: left;
+            position: relative;
+            transition: all .2s ease;
+            z-index: 1;
+            transform: scale(1.2);
+            box-shadow: 0rem 4rem 10rem $dark;
+
+            &-1 {
+                transform: scale(.9);
+                top: 2px;
+                left: 6%;
+            }
+
+
+            &-2 {
+                top: -2px;
+                left: 6%;
+                transform: scale(1.3);
+                z-index: 9;
+
+            }
+
+            &-3 {
+                transform: scale(.9);
+                top: 2px;
+                left: 6%;
+            }
+        }
+
+        &:hover {
+            outline: 1.2rem solid $success;
+            transform: scale(1.1);
+            z-index: 35;
+            box-shadow: 0rem 6rem 8rem $dark;
+            // for responsive 
+            @include respond(phone-port) {
+                outline: none;
+                z-index: 35;
+            }
+        }
+    }
+
+    &:hover &__photo:not(:hover) {
+        transform: scale(.9) translateY(.7rem);
+
+        // for responsive 
+        @include respond(phone-port) {
+            transform: none !important;
+        }
+    }
+}
